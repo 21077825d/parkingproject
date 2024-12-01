@@ -1,0 +1,112 @@
+[
+  {
+    "email": "123456@gamil.com",
+    "bookings": [
+      {
+        "parkingBay": "2L12",
+        "orderdate": "2024-12-01",
+        "CarPlateNo": "123",
+        "entryDate": "2024-11-29T13:52",
+        "exitDate": "2024-11-30T13:52",
+        "parkingFee": "$100",
+        "selected-parkingBay": "2L12",
+        "vehicleType": "private-car"
+      }
+    ]
+  },
+  {
+    "email": "1234562323@gamil.com",
+    "bookings": [
+      {
+        "parkingBay": "2L9",
+        "orderdate": "2024-12-01",
+        "CarPlateNo": "123",
+        "entryDate": "2024-11-29T13:52",
+        "exitDate": "2024-11-29T19:52",
+        "parkingFee": "$90",
+        "selected-parkingBay": "2L9",
+        "vehicleType": "private-car"
+      },
+      {
+        "parkingBay": "3L7",
+        "orderdate": "2024-12-01",
+        "CarPlateNo": "12",
+        "entryDate": "2024-12-01T19:09",
+        "exitDate": "2024-12-04T14:14",
+        "parkingFee": "HKD$918.00",
+        "selected-parkingBay": "3L7",
+        "vehicleType": "van-type-light-goods-vehicle"
+      },
+      {
+        "parkingBay": "3R10",
+        "orderdate": "2024-12-01",
+        "CarPlateNo": "12",
+        "entryDate": "2024-12-03T15:25",
+        "exitDate": "2024-12-04T15:25",
+        "parkingFee": "HKD$324.00",
+        "selected-parkingBay": "3R10",
+        "vehicleType": "van-type-light-goods-vehicle"
+      }
+    ]
+  },
+  {
+    "email": "21074611d@gmail.com",
+    "bookings": [
+      {
+        "parkingBay": "1R8, 1L10",
+        "orderdate": "2024-11-29",
+        "CarPlateNo": "AB123",
+        "entryDate": "2024-11-30T02:33",
+        "exitDate": "2024-11-30T04:33",
+        "parkingFee": "HKD$60.00",
+        "selected-parkingBay": "1R8, 1L10",
+        "vehicleType": "private-car"
+      },
+      {
+        "parkingBay": "2R9",
+        "orderdate": "2024-11-30",
+        "CarPlateNo": "AB123",
+        "entryDate": "2024-11-30T15:44",
+        "exitDate": "2024-11-30T17:44",
+        "parkingFee": "HKD$10.00",
+        "selected-parkingBay": "2R9",
+        "vehicleType": "motorcycle"
+      },
+      {
+        "parkingBay": "3L5",
+        "orderdate": "2024-11-30",
+        "CarPlateNo": "AB123",
+        "entryDate": "2024-11-30T15:52",
+        "exitDate": "2024-11-30T17:52",
+        "parkingFee": "HKD$30.00",
+        "selected-parkingBay": "3L5",
+        "vehicleType": "van-type-light-goods-vehicle"
+      },
+      {
+        "parkingBay": "3R11",
+        "orderdate": "2024-11-30",
+        "CarPlateNo": "AB123",
+        "entryDate": "2024-11-30T17:30",
+        "exitDate": "2024-11-30T19:30",
+        "parkingFee": "HKD$27.00",
+        "selected-parkingBay": "3R11",
+        "vehicleType": "van-type-light-goods-vehicle"
+      }
+    ]
+  },
+  {
+    "email": "test@gmail.com",
+    "bookings": [
+      {
+        "parkingBay": "1L2",
+        "orderdate": "2024-11-30",
+        "CarPlateNo": "V1832",
+        "entryDate": "2024-11-30T21:02",
+        "exitDate": "2024-11-30T22:05",
+        "parkingFee": "HKD$27.00",
+        "selected-parkingBay": "1L2",
+        "vehicleType": "private-car"
+      }
+    ]
+  }
+]

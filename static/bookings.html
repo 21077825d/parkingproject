@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookings</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+      body {
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px; /* Increased font size */
+      }
+      .sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 200px; /* Set a fixed width for the sidebar */
+        background-color: #f5f5f5;
+        padding: 30px; /* Increased padding */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000; /* Ensure the sidebar is on top */
+      }
+      .sidebar a,
+      .sidebar button {
+        display: flex;
+        align-items: center;
+        padding: 15px; /* Increased padding */
+        text-decoration: none;
+        color: #333;
+        margin-bottom: 15px; /* Increased margin */
+        font-size: 16px; /* Increased font size */
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      .sidebar a img,
+      .sidebar button img {
+        width: 25px; /* Increased image size */
+        height: 25px; /* Increased image size */
+        margin-right: 15px; /* Increased margin */
+      }
+      .sidebar a:hover,
+      .sidebar button:hover {
+        background-color: #ddd;
+      }
+      .sidebar div {
+        font-size: 28px; /* Increased font size for BOOKING SYSTEM */
+        font-weight: bold; /* Make it bold */
+        margin-bottom: 20px; /* Add some space below */
+      }
+      .header {
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+        margin-left: 200px; /* Offset the header to the right of the sidebar */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .profile-pic {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .main-content {
+        margin-left: 200px; /* Offset the main content to the right of the sidebar */
+      }
+      .bookings-card {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 30px;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .bookings-card h2 {
+        margin-top: 0;
+        font-size: 24px;
+      }
+      .bookings-card p {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header" id="header">
+      <span>Bookings</span>
+      <img src="" alt="Profile Picture" class="profile-pic" id="profilePic" />
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block sidebar">
+          <div class="sidebar-sticky">
+            <div>BOOKING SYSTEM</div>
+            <a href="profile.html" class="sidebar-link"
+              ><img src="../assets/index/UserProfile.png" alt="User Profile" />User Profile</a
+            >
+            <a href="bookings.html" class="sidebar-link"
+              ><img src="../assets/index/Bookings.png" alt="Bookings" />Bookings</a
+            >
+            <a href="help.html" class="sidebar-link"><img src="../assets/index/Help.png" alt="Help" />Help</a>
+            <a href="settings.html" class="sidebar-link"
+              ><img src="../assets/index/Setting.png" alt="Settings" />Settings</a
+            >
+            <a href="booking-page1.html"><img src="../img/start_booking.jpeg" alt="Start Booking" />Start</a>
+            <button id="logoutButton"><img src="../assets/index/Logout.png" alt="Logout" />Logout</button>
+          </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 main-content">
+          <div class="bookings-card">
+            <h2>Your Bookings</h2>
+            <div id="bookingsList"></div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script>
+      // Fetch user profile data
+      fetch('/profile')
+        .then((response) => response.json())
+        .then((data) => {
+          document.getElementById('profilePic').src = data.profilePic;
+        })
+        .catch((error) => {
+          console.error('Error fetching profile data:', error);
+        });
+
+      // Fetch bookings data
+      fetch('/api/bookings')
+        .then((response) => response.json())
+        .then((data) => {
+          const bookingsList = document.getElementById('bookingsList');
+          data.bookings.forEach((booking) => {
+            booking.bookings.forEach((b) => {
+              const bookingItem = document.createElement('div');
+              bookingItem.innerHTML = `
+                <p><strong>Order Date:</strong> ${b.orderdate}</p>
+                <p><strong>Parking Bay:</strong> ${b.parkingBay}</p>
+                <p><strong>Car Plate No:</strong> ${b.CarPlateNo}</p>
+                <p><strong>Parking Fee:</strong> ${b.parkingFee}</p>
+                <p><strong>Selected Parking Bay:</strong> ${b['selected-parkingBay']}</p>
+                <p><strong>Vehicle Type:</strong> ${b.vehicleType}</p>
+                <p><strong>Entry Date:</strong> ${b.entryDate}</p>
+                <p><strong>Exit Date:</strong> ${b.exitDate}</p>
+                <hr>
+              `;
+              bookingsList.appendChild(bookingItem);
+            });
+          });
+        })
+        .catch((error) => {
+          console.error('Error fetching bookings data:', error);
+        });
+
+      // Handle logout
+      document.getElementById('logoutButton').addEventListener('click', () => {
+        fetch('/logout', {
+          method: 'POST',
+        })
+          .then((response) => {
+            if (response.ok) {
+              window.location.href = 'login.html';
+            } else {
+              alert('Logout failed');
+            }
+          })
+          .catch((error) => {
+            console.error('Error during logout:', error);
+          });
+      });
+
+      // Check if user is logged in before navigating to other pages
+      document.querySelectorAll('.sidebar-link').forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          fetch('/profile')
+            .then((response) => {
+              if (response.ok) {
+                window.location.href = link.getAttribute('href');
+              } else if (response.status === 401) {
+                window.location.href = 'login.html';
+              }
+            })
+            .catch((error) => {
+              console.error('Error checking login status:', error);
+              window.location.href = 'login.html';
+            });
+        });
+      });
+    </script>
+  </body>
+</html>

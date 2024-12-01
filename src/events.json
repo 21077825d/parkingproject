@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "title": "Holiday Parking Discount12831278",
+    "startDate": "2024-12-20",
+    "endDate": "2024-12-31",
+    "venue": "Downtown Parking Lot",
+    "description": "Enjoy a special holiday discount on parking at our downtown location. Park your car and take advantage of a 10% discount during the holiday season.",
+    "discount": "10%",
+    "coverImage": "/assets/events/1732888367760-Logout.png"
+  },
+  {
+    "id": "1732891649496",
+    "title": "test",
+    "startDate": "2024-11-21",
+    "endDate": "2024-12-07",
+    "venue": "A1",
+    "description": "test",
+    "discount": "10%",
+    "coverImage": "/assets/events/1732891649494-png-clipart-cheeseburger-hamburger-french-fries-filet-o-fish-mcdonald-s-mcdonalds.png"
+  }
+]

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Park Booking</title>
+    <link rel="stylesheet" href="css/booking-page3.css" />
+    <script src="js/booking-page3.js" defer></script>
+  </head>
+  <body>
+    <div class="row">
+      <div class="container">
+        <div class="header">
+          <h1 class="project-title">EIE4432</h1>
+          <div class="steps">
+            <div class="step">&#x2714;</div>
+            <div class="step">&#x2714;</div>
+            <div class="step3">3</div>
+          </div>
+          <h2 class="booking-title">Payment</h2>
+          <p class="tip">kindly follow the instruction below</p>
+        </div>
+      </div>
+    </div>
+    <div class="row middle">
+      <div class="container">
+        <div class="left">
+          <div class="notes">
+            <div class="booking-information">Booking Information</div>
+          </div>
+        </div>
+        <div class="right">
+          <form id="payForm">
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="eg: name@gmail.com"
+                id="email"
+                name="email"
+                aria-label="Email"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="car-plate-no">Car Plate No</label>
+              <input
+                type="text"
+                class="form-control"
+                id="car-plate-no"
+                name="car-plate-no"
+                aria-label="car-plate-no"
+                required
+                minlength="1" />
+            </div>
+            <div class="form-group">
+              <label for="octopus-card-no">Octopus Card Number</label>
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="octopus-card-no"
+                  name="octopus-card-no"
+                  aria-label="octopus-card-no"
+                  required
+                  minlength="8"
+                  required
+                  maxlength="8" />
+                <span>(</span>
+                <input
+                  type="text"
+                  class="form-control short-input"
+                  id="octopus-card-last-digit"
+                  name="octopus-card-last-digit"
+                  aria-label="octopus-card-last-digit"
+                  required
+                  minlength="1"
+                  required
+                  maxlength="1" />
+                <span>)</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="octopus-card-no-confirm">Confirm Octopus Card Number</label>
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="octopus-card-no-confirm"
+                  name="octopus-card-no-confirm"
+                  aria-label="octopus-card-no-confirm"
+                  required
+                  minlength="8"
+                  required
+                  maxlength="8" />
+                <span>(</span>
+                <input
+                  type="text"
+                  class="form-control short-input"
+                  id="octopus-card-last-digit-confirm"
+                  name="octopus-card-last-digit"
+                  aria-label="octopus-card-last-digit-confirm"
+                  required
+                  maxlength="1"
+                  required
+                  maxlength="1" />
+                <span>)</span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="container">
+        <div class="button-container">
+          <button type="submit" id="payButton" name="payButton" form="payForm">Pay Now</button>
+          <button
+            type="button"
+            id="cancelButton"
+            name="cancelButton"
+            onclick="window.location.href='booking-page2.html'">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

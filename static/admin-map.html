@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Map Control</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/booking-page2.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+      body {
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+      }
+      .sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 200px;
+        background-color: #f5f5f5;
+        padding: 30px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+      .sidebar a,
+      .sidebar button {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        text-decoration: none;
+        color: #333;
+        margin-bottom: 15px;
+        font-size: 16px;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      .sidebar a img,
+      .sidebar button img {
+        width: 25px;
+        height: 25px;
+        margin-right: 15px;
+      }
+      .sidebar a:hover,
+      .sidebar button:hover {
+        background-color: #ddd;
+      }
+      .sidebar div {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .header {
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+        margin-left: 200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .profile-pic {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .main-content {
+        margin-left: 200px;
+      }
+      .admin-card {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 30px;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .admin-card h2 {
+        margin-top: 0;
+        font-size: 24px;
+      }
+      .admin-card p {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      .user-info {
+        margin-bottom: 20px;
+      }
+      .booking-info {
+        margin-left: 20px;
+      }
+      .svg-container {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .edit-button,
+      .confirm-button {
+        margin: 10px 0;
+        padding: 10px 80px;
+        font-size: 1.25em;
+        font-weight: bold;
+        height: fit-content;
+        border-radius: 5px;
+        color: #003dfc;
+        background-color: white;
+        border: 1px solid #003dfc;
+      }
+      .edit-button:hover,
+      .confirm-button:hover {
+        background-color: #003dfc;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header" id="header">
+      <span>Admin Map Control</span>
+      <img src="" alt="Profile Picture" class="profile-pic" id="profilePic" />
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block sidebar">
+          <div class="sidebar-sticky">
+            <div>BOOKING SYSTEM</div>
+            <a href="profile.html" class="sidebar-link"
+              ><img src="../assets/index/UserProfile.png" alt="User Profile" />User Profile</a
+            >
+            <a href="bookings.html" class="sidebar-link"
+              ><img src="../assets/index/Bookings.png" alt="Bookings" />Bookings</a
+            >
+            <a href="help.html" class="sidebar-link"><img src="../assets/index/Help.png" alt="Help" />Help</a>
+            <a href="settings.html" class="sidebar-link"
+              ><img src="../assets/index/Setting.png" alt="Settings" />Settings</a
+            >
+            <a href="admin.html" class="sidebar-link"> Admin</a>
+            <a href="eventmanagement.html" class="sidebar-link">Events</a>
+            <a href="admin-map.html" class="sidebar-link"> Map Control</a>
+            <button id="logoutButton"><img src="../assets/index/Logout.png" alt="Logout" />Logout</button>
+          </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 main-content">
+          <div class="admin-card">
+            <h2>Admin Dashboard</h2>
+            <p>Welcome, Administrator!</p>
+            <p>Here you can manage the SVG map and perform other administrative tasks.</p>
+            <div class="svg-container">
+              <h3>Parking Bay Map</h3>
+              <div id="parking-map">
+                <div class="floor" id="floor-1">
+                  <h4>Floor 1 (Car Park 1)</h4>
+                  <svg width="1200" height="300" id="svg-floor-1"></svg>
+                </div>
+                <div class="floor" id="floor-2">
+                  <h4>Floor 2 (Car Park 1)</h4>
+                  <svg width="1200" height="300" id="svg-floor-2"></svg>
+                </div>
+                <div class="floor" id="floor-3">
+                  <h4>Floor 3 (Car Park 2)</h4>
+                  <svg width="1200" height="300" id="svg-floor-3"></svg>
+                </div>
+              </div>
+              <button class="edit-button" onclick="toggleEditMode()">Edit</button>
+              <button class="confirm-button" onclick="confirmChanges()">Confirm</button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="js/admin-map.js"></script>
+  </body>
+</html>

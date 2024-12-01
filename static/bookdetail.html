@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+      body,
+      footer {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        padding-bottom: 0px;
+      }
+
+      .navbar-nav .nav-link,
+      .btn {
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .navbar {
+        background-color: #ffffff;
+        border-bottom: 2px solid #e5e5e5;
+      }
+
+      .navbar-nav {
+        margin-left: 0;
+      }
+
+      .navbar-light .navbar-nav .nav-link.active {
+        color: #3252df;
+        font-size: 16px;
+      }
+
+      .navbar-light .navbar-nav .nav-link {
+        color: #152c5b;
+        font-size: 16px;
+      }
+
+      .navbar-light .navbar-nav .nav-link:hover {
+        color: #152c5b;
+      }
+
+      .btn {
+        width: 90px;
+        height: 38px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.3s;
+        font-size: 16px;
+      }
+
+      .btn:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      footer {
+        background-color: #3252df;
+        color: white;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .navbar-brand {
+          margin-left: 0;
+        }
+        .rectangle {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+      /* Align items to the left when the navbar is collapsed */
+      @media (max-width: 992px) {
+        .navbar-collapse {
+          justify-content: flex-start;
+        }
+      }
+
+      /* Align items to the right when the navbar is expanded */
+      @media (min-width: 992px) {
+        .navbar-collapse {
+          justify-content: flex-end;
+        }
+      }
+
+      .event-card {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 30px;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .event-card h2 {
+        margin-top: 0;
+        font-size: 24px;
+      }
+      .event-card p {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      .search-bar {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">My Website</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link mr-lg-3 mb-2 mb-lg-0" href="index.html">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link mr-lg-3 mb-2 mb-lg-0" href="bookdetail.html">Booking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mr-lg-3 mb-2 mb-lg-0" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary mr-2 mb-2 mb-lg-0" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary mb-2 mb-lg-0" href="register.html">Register</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container my-3">
+      <p style="font-size: 18px; color: #b0b0b0">
+        Home / <span style="color: #152c5b">Disney Public Car Park Information</span>
+      </p>
+    </div>
+
+    <div class="container rectangle bg-secondary text-white p-3 rounded">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="../assets/carpark.png" alt="Description" class="img-fluid rounded" />
+        </div>
+        <div class="col-md-8">
+          <h4>Disney Public Car Park Information</h4>
+          <p>Car parks for Hong Kong Disneyland Park are available for private cars, coaches, and motorcycles.</p>
+          <p>
+            The capacity of the car park includes approximately 1,400 parking spaces for private cars, 240 spaces for
+            coaches, and 40 spaces for motorcycles.
+          </p>
+          <p>For your convenience, there is a designated drop-off/pick-up area beside the car park.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container my-3">
+      <p style="font-size: 18px; color: #000000">Event Dashboard</p>
+      <div class="search-bar">
+        <input
+          type="text"
+          id="searchInput"
+          class="form-control"
+          placeholder="Search events by date/time, title, venue, description" />
+      </div>
+      <div id="eventList"></div>
+    </div>
+
+    <div class="container my-3">
+      <p style="font-size: 18px; color: #000000">Booking information</p>
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <h5>Private Car, Disabled Private Car, and Motorcycle</h5>
+          <div
+            class="d-flex justify-content-between align-items-center"
+            style="background-color: #b69fdb; padding: 14px">
+            <div class="d-flex">
+              <img src="../assets/ic_private_car_white.png" alt="Private Car" class="img-fluid mb-3 mr-2" />
+              <img
+                src="../assets/ic_disabled_private_car_white.png"
+                alt="Disabled Private Car"
+                class="img-fluid mb-3 mr-2" />
+              <img src="../assets/ic_motorcycle_white.png" alt="Motorcycle" class="img-fluid mb-3" />
+            </div>
+            <button class="btn btn-primary mb-3" id="bookPrivateCar">Book</button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h5>Van-type Light Goods Vehicle</h5>
+          <div
+            class="d-flex justify-content-between align-items-center"
+            style="background-color: #b69fdb; padding: 10px">
+            <div class="d-flex">
+              <img
+                src="../assets/ic_light_goods_vehicle.png"
+                alt="Van-type Light Goods Vehicle"
+                class="img-fluid mb-3" />
+            </div>
+            <button class="btn btn-primary mb-3" id="bookVan">Book</button>
+          </div>
+        </div>
+      </div>
+
+      <table class="table table-bordered" style="background-color: #8eb6d6d8">
+        <thead>
+          <tr>
+            <th>Vehicle Type</th>
+            <th>Daily Rate</th>
+            <th>Overnight Rate</th>
+            <th>Hourly Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div>
+                <img src="../assets/ic_private_car_white.png" alt="Private Car" class="img-fluid mb-3" />
+              </div>
+              Private Car
+            </td>
+            <td>$150.0</td>
+            <td>$80.0</td>
+            <td>$15.0</td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <img src="../assets/ic_motorcycle_white.png" alt="Motorcycle" class="img-fluid mb-3" />
+              </div>
+              Motorcycle
+            </td>
+            <td>$40.0</td>
+            <td>$25.0</td>
+            <td>$5.0</td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <img
+                  src="../assets/ic_light_goods_vehicle.png"
+                  alt="Van-type Light Goods Vehicle"
+                  class="img-fluid mb-3" />
+              </div>
+              Van-type Light Goods Vehicle
+            </td>
+            <td>-</td>
+            <td>-</td>
+            <td>$15.0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer>
+      <div class="text-center">© 2024 My Website</div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../static/js/index.js"></script>
+    <script>
+      // Fetch event data
+      fetch('/events')
+        .then((response) => response.json())
+        .then((data) => {
+          const eventList = document.getElementById('eventList');
+          data.events.forEach((event) => {
+            const eventCard = document.createElement('div');
+            eventCard.classList.add('event-card');
+            eventCard.innerHTML = `
+             <h2>${event.title}</h2> 
+             <p><strong>Start Date:</strong> ${event.startDate}</p> 
+             <p><strong>End Date:</strong> ${event.endDate}</p> 
+             <p><strong>Venue:</strong> ${event.venue}</p> 
+             <p><strong>Description:</strong> ${event.description}</p> 
+             <p><strong>Discount:</strong> ${event.discount}</p> <img src="${event.coverImage}" alt="Event Cover Image" class="img-fluid" /> `;
+            eventList.appendChild(eventCard);
+          });
+        })
+        .catch((error) => {
+          console.error('Error fetching event data:', error);
+        });
+
+      // Handle search
+      document.getElementById('searchInput').addEventListener('input', (event) => {
+        const query = event.target.value.toLowerCase();
+        const eventCards = document.querySelectorAll('.event-card');
+        eventCards.forEach((card) => {
+          const title = card.querySelector('h2').textContent.toLowerCase();
+          const description = card.querySelector('p:nth-of-type(3)').textContent.toLowerCase();
+          const venue = card.querySelector('p:nth-of-type(2)').textContent.toLowerCase();
+          const date = card.querySelector('p:nth-of-type(1)').textContent.toLowerCase();
+          if (title.includes(query) || description.includes(query) || venue.includes(query) || date.includes(query)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+
+      // Handle book button clicks
+      document.getElementById('bookPrivateCar').addEventListener('click', function () {
+        alert('Please login before booking');
+        window.location.href = 'login.html';
+      });
+
+      document.getElementById('bookVan').addEventListener('click', function () {
+        alert('Please login before booking');
+        window.location.href = 'login.html';
+      });
+    </script>
+  </body>
+</html>

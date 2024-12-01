@@ -1,0 +1,5 @@
+{
+  "watch": ["src"],
+  "ignore": ["src/parkingbay.json", "src/bookings.json"],
+  "ext": "js,json"
+}

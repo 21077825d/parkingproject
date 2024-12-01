@@ -1,0 +1,46 @@
+[
+  {
+    "account": "admin",
+    "id": "cf5ec38b-79a4-4254-8652-c18f64b5528b",
+    "userId": "admin",
+    "nickname": "Administrator",
+    "password": "$2b$10$qFKVtXcgaFjB7MFJmDyPfe1KT2ZnunEGZ/p0A4pjMz.FY7YzIVltm",
+    "email": "admin@example.com",
+    "gender": "other",
+    "birthdate": "2000-01-01",
+    "profilePic": "/assets/profile/default-profile.png"
+  },
+  {
+    "account": "user",
+    "id": "e9256276-a9bd-4495-b569-1b9f9be389a7",
+    "userId": "21077825d",
+    "nickname": "21077825dabd",
+    "password": "$2b$10$8o6N55utuvqRtTE7L3wAiOpMLK3ZUr9GfEzd4qKgZ0abr7k0Ltxd6",
+    "email": "1234562323@gamil.com",
+    "gender": "male",
+    "birthdate": "2024-11-07",
+    "profilePic": "/assets/profile/e9256276-a9bd-4495-b569-1b9f9be389a7-3383c68556dc0f273342204e6564ea71638389747.gif"
+  },
+  {
+    "account": "user",
+    "id": "c795d802-558c-403e-9d2f-8221d566359d",
+    "userId": "21074611d",
+    "nickname": "George",
+    "password": "$2b$10$ijrHDlPryIZV9qrNI.EBh.D0ueOtBderKFuT7/NnnPMcQONhaYKiC",
+    "email": "21074611d@gmail.com",
+    "gender": "male",
+    "birthdate": "2024-11-07",
+    "profilePic": "/assets/profile/default-profile.png"
+  },
+  {
+    "account": "user",
+    "id": "3ada5b4b-5b38-4bcb-8d9c-aa88cae77358",
+    "userId": "Test3",
+    "nickname": "Alex",
+    "password": "$2b$10$TBN7jOu.ADvdrlgDIo8h7e57.ATbzTIKeEnmPPJFCN1J6s2AWcDNO",
+    "email": "test@gmail.com",
+    "gender": "female",
+    "birthdate": "2024-11-06",
+    "profilePic": "/assets/profile/default-profile.png"
+  }
+]

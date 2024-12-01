@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/register.js" defer></script>
+    <style>
+      body {
+        display: flex;
+        height: 100vh;
+        margin: 0;
+      }
+      .left-column,
+      .right-column {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f8f6f6;
+      }
+      .left-column {
+        height: 100%;
+      }
+      .left-column img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .register-form {
+        width: 315px;
+      }
+      footer {
+        background-color: #000000;
+        color: white;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #registerButton {
+        margin: 10px 0;
+        padding: 10px 115px;
+        font-size: 1.25em;
+        font-weight: bold;
+        height: fit-content;
+        border-radius: 5px;
+        color: #003dfc;
+        border: 1px solid #003dfc;
+      }
+      #registerButton:hover {
+        background-color: #003dfc;
+        color: white;
+      }
+      #backButton {
+        margin: 10px 0;
+        padding: 10px 103px;
+        font-size: 1.25em;
+        font-weight: bold;
+        height: fit-content;
+        border-radius: 5px;
+        background-color: #f8f6f6;
+        color: rgb(26, 26, 26);
+        border: none; /* Remove the outline */
+        text-decoration: underline; /* Underline the text */
+        white-space: nowrap; /* Ensure text stays on one line */
+      }
+      #backButton:hover {
+        background-color: rgb(26, 26, 26);
+        color: white;
+      }
+      .agreement {
+        font-size: 0.8em;
+        text-align: center;
+        padding-bottom: 10px;
+      }
+      .agreement a {
+        color: #003dfc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="left-column">
+      <img src="../img/register-page-photo.png" alt="Description of image" />
+    </div>
+    <div class="right-column">
+      <main class="register-form">
+        <h2 class="text-center">Register</h2>
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="userId">User ID</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter your user ID"
+              id="userId"
+              name="userId"
+              aria-label="User ID"
+              required />
+          </div>
+          <div class="form-group">
+            <label for="nickname">Nickname</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter your nickname"
+              id="nickname"
+              name="nickname"
+              aria-label="Nickname"
+              required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              aria-label="Password"
+              required
+              minlength="6" />
+          </div>
+          <div class="form-group">
+            <label for="repeatPassword">Repeat Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="repeatPassword"
+              name="repeatPassword"
+              aria-label="Repeat Password"
+              required
+              minlength="6" />
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="eg: name@gmail.com"
+              id="email"
+              name="email"
+              aria-label="Email"
+              required />
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control" id="gender" name="gender" aria-label="Gender" required>
+              <option value="" disabled selected>Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="birthdate">Birthdate</label>
+            <input type="date" class="form-control" id="birthdate" name="birthdate" aria-label="Birthdate" required />
+          </div>
+          <div class="agreement">By registering, you agree to our <a href="#">terms and conditions</a>.</div>
+          <div class="button-container">
+            <button type="submit" id="registerButton" name="registerButton">Register</button>
+            <button type="button" id="backButton" name="backButton" onclick="window.location.href='index.html'">
+              Back
+            </button>
+          </div>
+        </form>
+        <div id="message" class="mt-3"></div>
+      </main>
+    </div>
+    <footer>
+      <p>21074611D Tam Tsz Lam - EIE4432 Lab 5</p>
+      <p id="datetime"></p>
+    </footer>
+    <script>
+      document.getElementById('datetime').textContent = new Date().toLocaleString();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: white; /* Set the background color of the body */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+.row {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensure rows take full width */
+}
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #152C5B;
+}
+.steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative; /* Position relative for pseudo-elements */
+}
+.step {
+  width: 45px;
+  height: 45px;
+  font-size: 24px;
+  background-color: #1ABC9C;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 30px;
+  z-index: 1; /* Ensure steps are above the lines */
+}
+.step3
+{
+  width: 45px;
+  height: 45px;
+  font-size: 24px;
+  background-color: #E5E5E5;
+  color: #898989;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 30px;
+  z-index: 1; /* Ensure steps are above the lines */
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: white; /* Match the background color of the container to the body */
+  color: #152C5B;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 1200px; /* Increase the max-width */
+  width: 95%; /* Increase the width */
+  overflow-y: auto; /* Ensure container can scroll if content overflows */
+}
+.project-title {
+  padding-bottom: 10px;
+}
+.steps {
+  padding-top: 15px;
+}
+.booking-title {
+  color: #152C5B;
+  font-size: 2em;
+}
+.tip {
+  color: #3252DF;
+  font-size: 1em;
+}
+.middle {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensure middle section takes full width */
+}
+.middle .container {
+  flex-direction: row;
+}
+.left, .right {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.left
+{
+  font-size: 1.25em;
+  text-align: left;
+}
+.notes p {
+  margin: 5px 0;
+  padding-top: 20px;
+}
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+.form-group input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#payButton {
+  margin: 10px 0;
+  padding: 10px 80px;
+  font-size: 1.25em;
+  font-weight: bold;
+  height: fit-content;
+  border-radius: 5px;
+  color: #003DFC;
+  background-color: white;
+  border: 1px solid #003DFC;
+}
+#payButton:hover {
+  background-color: #003DFC;
+  color: white;
+}
+#cancelButton {
+  margin: 10px 0;
+  padding: 10px 90px;
+  font-size: 1.25em;
+  font-weight: bold;
+  height: fit-content;
+  border-radius: 5px;
+  background-color: white;
+  color: #B3B3B3;
+  border: none; /* Remove the outline */
+  text-decoration: underline; /* Underline the text */
+  white-space: nowrap; /* Ensure text stays on one line */
+}
+#cancelButton:hover {
+  background-color: rgb(26, 26, 26);
+  color: white;
+}
+.input-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.form-control.short-input {
+    width: 20px; /* Ensure this is small enough for one character */
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center; /* Center the text inside the input */
+    flex: none; /* Prevent the input from stretching */
+}           

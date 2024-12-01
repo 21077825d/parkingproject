@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parking Bay Map</title>
+    <link rel="stylesheet" href="css/booking-page2.css" />
+    <script src="js/booking-page2.js" defer></script>
+  </head>
+  <body>
+    <h1>Parking Bay Map</h1>
+    <div id="parking-map">
+      <!-- Floor 1 -->
+      <div class="floor" id="floor-1">
+        <h2>Floor 1 (Car Park 1)</h2>
+        <svg width="1200" height="300" id="svg-floor-1"></svg>
+      </div>
+      <!-- Floor 2 -->
+      <div class="floor" id="floor-2">
+        <h2>Floor 2 (Car Park 1)</h2>
+        <svg width="1200" height="300" id="svg-floor-2"></svg>
+      </div>
+      <div class="floor" id="floor-3">
+        <h2>Floor 3 (Car Park 2)</h2>
+        <svg width="1200" height="300" id="svg-floor-3"></svg>
+      </div>
+    </div>
+    <div id="selected-bays">Selected Parking bay(s):</div>
+    <button class="next-button" onclick="nextPage()">Next</button>
+    <button type="button" id="cancelButton" name="cancelButton" onclick="window.location.href='booking-page1.html'">
+      Cancel
+    </button>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+[
+  {
+    "bayId": "2L12",
+    "email": "123456@gamil.com",
+    "enabled": true
+  },
+  {
+    "bayId": "2L9",
+    "email": "1234562323@gamil.com",
+    "enabled": true
+  },
+  {
+    "bayId": "1R8",
+    "email": "21074611d@gmail.com",
+    "enabled": true
+  },
+  {
+    "bayId": "1L10",
+    "email": "21074611d@gmail.com",
+    "enabled": true
+  },
+  {
+    "bayId": "2R9",
+    "email": "21074611d@gmail.com",
+    "enabled": true
+  },
+  {
+    "bayId": "3L5",
+    "email": "21074611d@gmail.com",
+    "enabled": true
+  },
+  {
+    "bayId": "1L2",
+    "email": "test@gmail.com",
+    "enabled": true
+  },
+  {
+    "bayId": "3R8",
+    "email": "",
+    "enabled": false
+  },
+  {
+    "bayId": "3R10",
+    "email": "1234562323@gamil.com"
+  }
+]

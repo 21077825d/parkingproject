@@ -1,0 +1,78 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 160vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.parking-bay {
+  fill: lightgray;
+  stroke: black;
+  stroke-width: 1;
+  cursor: pointer;
+  transition: fill 0.3s;
+}
+.parking-bay:hover {
+  fill: #ffee8c;
+}
+.parking-bay.occupied {
+  fill: #cbe4f9;
+  cursor: not-allowed;
+}
+.booked {
+  fill: #f9d8d6;
+}
+.floor {
+  margin-bottom: 20px;
+}
+.next-button {
+  margin: 10px 0;
+  padding: 10px 80px;
+  font-size: 1.25em;
+  font-weight: bold;
+  height: fit-content;
+  border-radius: 5px;
+  color: #003dfc;
+  background-color: white;
+  border: 1px solid #003dfc;
+}
+.next-button:hover {
+  background-color: #003dfc;
+  color: white;
+}
+#cancelButton {
+  margin: 10px 0;
+  padding: 10px 90px;
+  font-size: 1.25em;
+  font-weight: bold;
+  height: fit-content;
+  border-radius: 5px;
+  background-color: white;
+  color: #b3b3b3;
+  border: none; /* Remove the outline */
+  text-decoration: underline; /* Underline the text */
+  white-space: nowrap; /* Ensure text stays on one line */
+}
+#cancelButton:hover {
+  background-color: rgb(26, 26, 26);
+  color: white;
+}
+.bay-number {
+  font-size: 14px;
+  text-anchor: middle;
+}
+#parking-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#selected-bays {
+  margin-bottom: 25px;
+  font-size: 1.2em;
+}
+.parking-bay.disabled {
+  fill: #c72121; /* Light gray color for disabled bays */
+  cursor: not-allowed;
+}

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Park Booking</title>
+    <link rel="stylesheet" href="css/booking-page1.css" />
+    <script src="js/booking-page1.js" defer></script>
+  </head>
+  <body>
+    <div class="row">
+      <div class="container">
+        <div class="header">
+          <h1 class="project-title">EIE4432</h1>
+          <div class="steps">
+            <div class="step">1</div>
+            <div class="step">2</div>
+            <div class="step">3</div>
+          </div>
+          <h2 class="booking-title">Booking Information</h2>
+          <p class="tip">Please fill up the blank fields below</p>
+        </div>
+      </div>
+    </div>
+    <div class="row middle">
+      <div class="container">
+        <div class="left">
+          <div class="notes">
+            <p>NOTES</p>
+            <p>1. Parking fee is calculated on an hourly basis and the part thereof.</p>
+            <p>2. Booking can only be made before you enter the car park and it can be made 2 hours prior to entry.</p>
+            <p>3. Booking is available for parking periods of:</p>
+            <ul>
+              <li>i. Car Park 1: minimum 2 hours to maximum 168 hours (7 days)</li>
+              <li>ii. Car Park 2: minimum 2 hours to maximum 72 hours (3 days)</li>
+            </ul>
+            <p>5. An administration fee of HK$100 will be charged for each amendment or cancellation.</p>
+            <p>6. You have to make full payment at the time of booking.</p>
+            <p>7. Booking is applicable to private car, motorcycle and van-type light goods vehicle.</p>
+            <p>8. Consecutive bookings shall not be allowed for the same vehicle.</p>
+          </div>
+        </div>
+        <div class="right">
+          <div class="car-selection">
+            <div class="car-selection-title">Car Park 1</div>
+            <div class="car-selection-message">
+              Taxi and Van-type Light Goods Vehicle are not allowed to park at Car Park 1
+            </div>
+            <div class="car-options-horizontal">
+              <div class="car-option">
+                <img src="../img/private-car-icon.png" alt="Car Icon 1" width="30" />
+                <label for="carpark1-option1">Private Car</label>
+                <input type="radio" id="carpark1-option1" name="carpark" value="carpark1-option1" />
+              </div>
+              <div class="car-option">
+                <img src="../img/disabled-private-car-icon.png" alt="Car Icon 2" width="30" />
+                <label for="carpark1-option2">Disabled Private Car</label>
+                <input type="radio" id="carpark1-option2" name="carpark" value="carpark1-option2" />
+              </div>
+              <div class="car-option">
+                <img src="../img/motorcycle-icon.png" alt="Car Icon 3" width="30" />
+                <label for="carpark1-option3">Motorcycle</label>
+                <input type="radio" id="carpark1-option3" name="carpark" value="carpark1-option3" />
+              </div>
+            </div>
+            <div class="car-selection-title">Car Park 2</div>
+            <div class="car-selection-message">Private Car and Taxi are not allowed to park at Car Park 2</div>
+            <div class="car-option">
+              <img src="../img/van-type light goods vehicle.png" alt="Car Icon 4" width="30" />
+              <label for="carpark2-option1">Van-type Light Goods Vehicle</label>
+              <input type="radio" id="carpark2-option1" name="carpark" value="carpark2-option1" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="entry-date">Entry Date & Time</label>
+            <div class="date-selector">
+              <input type="datetime-local" id="entry-date" name="entry-date" required />
+              <img src="../img/calendar.png" alt="Calendar Icon" class="calendar-icon" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exit-date">Exit Date & Time</label>
+            <div class="date-selector">
+              <input type="datetime-local" id="exit-date" name="exit-date" required />
+              <img src="../img/calendar.png" alt="Calendar Icon" class="calendar-icon" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="container">
+        <div class="button-container">
+          <button type="button" id="bookingButton" name="bookingButton" onclick="bookNow()">Book Now</button>
+          <button type="button" id="cancelButton" name="cancelButton" onclick="window.location.href='login.html'">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

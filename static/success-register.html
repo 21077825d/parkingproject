@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Successful</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: url('../assets/background.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: #003dfc;
+        text-align: center;
+        flex-direction: column;
+      }
+      .content {
+        background-color: rgba(255, 255, 255, 0.75); /* White background with 90% transparency */
+        padding: 20px;
+        border-radius: 10px;
+      }
+      footer {
+        background-color: #000000;
+        color: #f8f6f6;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+      .success-message {
+        padding-bottom: 30px;
+      }
+      .title {
+        margin-bottom: 20px; /* Increase the distance between title and message */
+      }
+      .check-circle {
+        font-size: 2em;
+        color: green;
+        margin-bottom: 20px; /* Space between the check circle and the message */
+      }
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #bookingButton {
+        margin: 10px 0;
+        padding: 10px 115px;
+        font-size: 1.25em;
+        font-weight: bold;
+        height: fit-content;
+        border-radius: 5px;
+        background-color: #f8f6f6;
+        color: #003dfc;
+        border: 1px solid #003dfc;
+      }
+      #bookingButton:hover {
+        background-color: #003dfc;
+        color: white;
+      }
+      .agreement {
+        font-size: 1em;
+        padding-bottom: 10px;
+        color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="success-message">
+        <h1 class="title">EIE4432</h1>
+        <div class="check-circle">
+          <img src="../img/check_circle.png" alt="Description of image" />
+        </div>
+        <!-- Check circle icon -->
+        <h1 class="message">Account Created Successfully!</h1>
+      </div>
+      <div class="button-container">
+        <button type="button" id="bookingButton" name="bookingButton" onclick="window.location.href='login.html'">
+          Login Now
+        </button>
+      </div>
+    </div>
+    <footer>
+      <p>21074611D Tam Tsz Lam EIE4432 Lab 5</p>
+      <p id="datetime"></p>
+    </footer>
+    <script>
+      document.getElementById('datetime').textContent = new Date().toLocaleString();
+    </script>
+  </body>
+</html>
